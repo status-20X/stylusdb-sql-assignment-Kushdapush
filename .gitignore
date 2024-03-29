@@ -131,3 +131,6 @@ dist
 
 
 **/.DS_Store
+
+# Files
+.src/dev.js
