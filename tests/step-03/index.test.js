@@ -7,7 +7,7 @@ test('Read CSV File', async () => {
     expect(data.length).toBe(3);
     expect(data[0].name).toBe('John');
     expect(data[0].age).toBe('30'); //ignore the string type here, we will fix this later
-}, 6000);
+});
 
 test('Parse SQL Query', () => {
     const query = 'SELECT id, name FROM student';
@@ -15,6 +15,6 @@ test('Parse SQL Query', () => {
     expect(parsed).toEqual({
         fields: ['id', 'name'],
         table: 'student',
-        whereClause: null
+        whereClauses: null
     });
 });
