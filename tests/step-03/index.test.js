@@ -15,6 +15,8 @@ test('Parse SQL Query', () => {
     expect(parsed).toEqual({
         fields: ['id', 'name'],
         table: 'student',
-        whereClauses: null
+        "joinCondition": null,
+        "joinTable": null,
+        whereClauses: []
     });
 });

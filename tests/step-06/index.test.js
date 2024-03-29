@@ -7,7 +7,7 @@ test('Read CSV File', async () => {
     expect(data.length).toBeGreaterThan(0);
     expect(data.length).toBe(3);
     expect(data[0].name).toBe('John');
-    expect(data[0].age).toBe('30'); //ignore the string type here, we will fix this later
+    expect(data[0].age).toBe('30');
 });
 
 test('Parse SQL Query', () => {
@@ -16,6 +16,8 @@ test('Parse SQL Query', () => {
     expect(parsed).toEqual({
         fields: ['id', 'name'],
         table: 'student',
+        "joinCondition": null,
+        "joinTable": null,
         whereClauses: []
     });
 });
@@ -36,6 +38,8 @@ test('Parse SQL Query with WHERE Clause', () => {
     expect(parsed).toEqual({
         fields: ['id', 'name'],
         table: 'student',
+        "joinCondition": null,
+        "joinTable": null,
         whereClauses: [{
             field: "age",
             operator: "=",
@@ -59,6 +63,8 @@ test('Parse SQL Query with Multiple WHERE Clauses', () => {
     expect(parsed).toEqual({
         fields: ['id', 'name'],
         table: 'student',
+        "joinCondition": null,
+        "joinTable": null,
         whereClauses: [{
             "field": "age",
             "operator": "=",
