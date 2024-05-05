@@ -1,7 +1,9 @@
-const execute = require("./index");
+const { executeDELETEQuery } = require("./queryExecutor");
+const { parseINSERTQuery } = require("./queryParser");
+const { readCSV, writeCSV } = require("./csvReader");
 
-const SQL_QUERY = "SELECT COUNT(*) FROM student GROUP BY age";
+const SQL_QUERY = "DELETE FROM courses WHERE course_id = '2'";
 
-execute(SQL_QUERY).then((data) => {
-  console.log(data);
+executeDELETEQuery(SQL_QUERY).then((data) => {
+  console.log("Query Executed", data);
 });
